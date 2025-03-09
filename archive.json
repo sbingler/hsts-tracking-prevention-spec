@@ -1,0 +1,81 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2025-03-09T01:35:10.256665+00:00",
+  "repo": "sbingler/hsts-tracking-prevention-spec",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOOEayXc6N1XbH",
+      "title": "Create the ID",
+      "url": "https://github.com/sbingler/hsts-tracking-prevention-spec/pull/1",
+      "state": "OPEN",
+      "author": "sbingler",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Create the Internet draft",
+      "createdAt": "2025-03-07T22:37:36Z",
+      "updatedAt": "2025-03-07T22:38:41Z",
+      "baseRepository": "sbingler/hsts-tracking-prevention-spec",
+      "baseRefName": "main",
+      "baseRefOid": "8f792a5ba5d206907f9570d3d891cc7b77012e42",
+      "headRepository": "sbingler/hsts-tracking-prevention-spec",
+      "headRefName": "CreateID",
+      "headRefOid": "ee58e11d63418051ff977ffa5d00566102ec0ba8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
