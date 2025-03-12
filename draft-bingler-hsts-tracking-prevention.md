@@ -25,7 +25,7 @@ category: info
 docname: draft-hsts-tracking-prevention-latest
 submissiontype: independent  # also: "IETF", "editorial", "IAB", or "IRTF"
 date: {DATE}
-consensus: true
+consensus: false
 v: 3
 area: sec
 keyword:
