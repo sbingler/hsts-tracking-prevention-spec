@@ -23,23 +23,14 @@ title: "HSTS Tracking Prevention"
 category: info
 
 docname: draft-hsts-tracking-prevention-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
-number:
-date:
+submissiontype: independent  # also: "IETF", "editorial", "IAB", or "IRTF"
+date: {DATE}
 consensus: true
 v: 3
-area: AREA
-workgroup: WG Working Group
+area: sec
 keyword:
  - HSTS
  - tracking prevention
-venue:
-  group: WG
-  type: Working Group
-  mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
 
 author:
  -
@@ -48,19 +39,16 @@ author:
     email: bingler@google.com
 
 normative:
-  RFC6767
-
-informative:
-
+  RFC6797
 
 --- abstract
 
-As mentioned in {Section 14.9 of RFC6767}, it's possible for entities in
+As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
 control of multiple hosts to encode arbitrary data within a user agent's HSTS 
 policy store. This data can later be retrieved and could be used to identify
 users.
 
-This document proposes a change to the user agent processing model of {RFC6767}
+This document proposes a change to the user agent processing model of {RFC6797}
 to enable user agents to employ tracking mitigation methods.
 
 
@@ -68,16 +56,16 @@ to enable user agents to employ tracking mitigation methods.
 
 # Introduction
 
-HTTP Strict Transport Security (HSTS), {RFC6767}, improves security for users
+HTTP Strict Transport Security (HSTS), {RFC6797}, improves security for users
 by allowing a host to tell the user agent that it should only ever be accessed
 over a secure connection.
 
 However, the design of HSTS allows for servers to abuse its state caching in
 order to set and retrieve arbitrary data, potentially for the purposes of
-tracking a user around the web. {Section 14.9 of RFC6767} warns of this
+tracking a user around the web. {Section 14.9 of RFC6797} warns of this
 possibility but does not discuss prevention.
 
-This document offers some minor modifications to {Section 8 of RFC6767}
+This document offers some minor modifications to {Section 8 of RFC6797}
 that allows for user agents to implement a way to prevent tracking of the user.
 
 It also touches on potential implementations and their downsides.
@@ -111,12 +99,13 @@ current site the user is on. This would force any server interested in tracking
 a user to set new data on every site, making it infeasible to correlate the
 user’s visits between sites via HSTS upgrades.
 
-## Monkey-Patches against RFC6767
+## Monkey-Patches against RFC6797
 
 ### Prevent Servers From Saving Tracking Data
 
 To allow user agents the option of preventing hosts they believe are tracking
-from setting HSTS data {Section 8.1.1 of RFC6767} should be changed as follows:
+the user from setting HSTS data {Section 8.1.1 of RFC6797} should be changed
+as follows:
 
 ~~~
    If the substring matching the host production from the Request-URI
@@ -141,14 +130,14 @@ should be modified to include
    Otherwise, if the substring...
 ~~~
 
-{Section 2.4.1.1 of RFC6767} step 4 may also need to be rewritten in a similar
+{Section 2.4.1.1 of RFC6797} step 4 may also need to be rewritten in a similar
 fashion.
 
 ### Prevent Servers From Retrieving Tracking Data.
 
 To allow user agents the option of preventing hosts they believe are tracking
-from retrieving HSTS data {Section 8.3 of RFC6767} should be changed as
-follows:
+the user from retrieving HSTS data {Section 8.3 of RFC6797} should be changed
+as follows:
 
 ~~~
    1.  Extract from the URI any substring described by the host
@@ -180,7 +169,7 @@ site.example and othersite.example it cannot easily track users between those
 sites. Doing this is frequently referred to as partitioning.
 
 This can be allowed by modifying the storage and indexing requirement of
-{Section 5.3 of RFC6767} to allow for partitioning of the HSTS policy Store.
+{Section 5.3 of RFC6797} to allow for partitioning of the HSTS policy Store.
 
 ~~~
    UAs store and index HSTS Policies based strictly upon the domain
@@ -207,7 +196,7 @@ Should be modified to include
    whose domain names are...
 ~~~
 
-{Section 8.2 of RFC6767} should receive a similar change
+{Section 8.2 of RFC6797} should receive a similar change
 
 ~~~
    A given domain name may match a Known HSTS Host's domain name in one
