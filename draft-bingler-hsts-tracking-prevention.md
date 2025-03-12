@@ -39,7 +39,7 @@ author:
     email: bingler@google.com
 
 normative:
-  RFC6797
+  RFC6797:
 
 --- abstract
 
