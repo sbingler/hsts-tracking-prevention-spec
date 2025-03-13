@@ -1,0 +1,3 @@
+# Automatically generated CODEOWNERS
+# Regenerate with `make update-codeowners`
+draft-bingler-hsts-tracking-prevention.md bingler@google.com
