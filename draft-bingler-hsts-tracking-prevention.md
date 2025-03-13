@@ -44,7 +44,7 @@ normative:
 --- abstract
 
 As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
-control of multiple hosts to encode arbitrary data within a user agent's HSTS 
+control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users.
 
@@ -182,7 +182,7 @@ Should be modified to include
 ~~~
    UAs store and index HSTS Policies based strictly upon the domain
    names of the issuing HSTS Hosts.
-   
+
    Note: UAs MAY decide to partition their HSTS policies by other inputs such
    as the top-level site the agent has been navigated to. In this case the UA
    should store and index HSTS Policies within that partition based strictly
@@ -210,7 +210,7 @@ Should be modified to include
    A given domain name may match a Known HSTS Host's domain name in one
    or both of two fashions: a congruent match, or a superdomain match.
    Alternatively, there may be no match.
-   
+
    Note: If the UA has decided to partition its HSTS Policies then the
    following algorithm MUST be performed only on HSTS Policies within the
    applicable partition.
@@ -238,4 +238,3 @@ This document has no IANA actions.
 {:numbered="false"}
 
 TODO acknowledge.
-
