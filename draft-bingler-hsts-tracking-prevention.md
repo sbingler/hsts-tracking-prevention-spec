@@ -68,7 +68,7 @@ possibility but does not discuss prevention.
 This document offers some minor modifications to {Section 8 of RFC6797}
 that allows for user agents to implement a way to prevent tracking of the user.
 
-It also touches on potential implementations and their downsides.
+It also touches on potential implementations.
 
 # Conventions and Definitions
 
@@ -76,7 +76,7 @@ It also touches on potential implementations and their downsides.
 
 # HSTS Tracking Prevention
 
-Tracking prevention can take a couple of forms:
+Tracking prevention could take one of a few forms:
 
 * Prevent servers from setting tracking data.
 
@@ -130,9 +130,6 @@ should be modified to include
    Otherwise, if the substring...
 ~~~
 
-{Section 2.4.1.1 of RFC6797} step 4 may also need to be rewritten in a similar
-fashion.
-
 ### Prevent Servers From Retrieving Tracking Data.
 
 To allow user agents the option of preventing hosts they believe are tracking
@@ -153,8 +150,8 @@ should be modified to include
    1.  Extract from the URI any substring described by the host
        component of the authority component of the URI.
 
-   2. If the UA has reason to believe this host intends to retrieve tracking
-      data then the UA MAY abort this algorithm.
+   2.  If the UA has reason to believe this host intends to retrieve tracking
+       data then the UA MAY abort this algorithm.
 
    2.  If the substring is null, then there is no match with any Known
        HSTS Host.
@@ -165,8 +162,8 @@ should be modified to include
 Making data correlation infeasible for tracking servers could be implemented a
 number of ways, but a straightforward design would be to keep the HSTS policies
 of different sites separated, so that even if tracker.example is embedded into
-site.example and othersite.example it cannot easily track users between those
-sites. Doing this is frequently referred to as partitioning.
+both site.example and othersite.example it cannot easily track users between
+those sites. Doing this is frequently referred to as partitioning.
 
 This can be allowed by modifying the storage and indexing requirement of
 {Section 5.3 of RFC6797} to allow for partitioning of the HSTS policy Store.
@@ -229,7 +226,6 @@ reducing the security of HTTP requests. Many UAs however implement some form
 of mixed content blocking and upgrading along with automatic upgrades of
 navigations to https top-level sites. These behaviors help limit any potential
 security decreases.
-
 
 # IANA Considerations
 
