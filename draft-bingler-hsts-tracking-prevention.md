@@ -185,7 +185,7 @@ Should be modified to include
    
    Note: UAs MAY decide to partition their HSTS policies by other inputs such
    as the top-level site the agent has been navigated to. In this case the UA
-   should store and index HSTS Policies within that partition based strictly 
+   should store and index HSTS Policies within that partition based strictly
    upon the domain names of the issuing HSTS Hosts.
 
    This means that UAs will maintain the HSTS Policy of any given HSTS
