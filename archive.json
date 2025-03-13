@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-11T01:51:23.488344+00:00",
+  "timestamp": "2025-03-13T01:52:02.882317+00:00",
   "repo": "sbingler/hsts-tracking-prevention-spec",
   "labels": [
     {
@@ -63,19 +63,385 @@
       "labels": [],
       "body": "Create the Internet draft",
       "createdAt": "2025-03-07T22:37:36Z",
-      "updatedAt": "2025-03-07T22:38:41Z",
+      "updatedAt": "2025-03-12T19:36:45Z",
       "baseRepository": "sbingler/hsts-tracking-prevention-spec",
       "baseRefName": "main",
       "baseRefOid": "8f792a5ba5d206907f9570d3d891cc7b77012e42",
       "headRepository": "sbingler/hsts-tracking-prevention-spec",
       "headRefName": "CreateID",
-      "headRefOid": "ee58e11d63418051ff977ffa5d00566102ec0ba8",
+      "headRefOid": "4cd0c2bb103d6036cb459a02ef7bc4ab6c8ddbe1",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "@miketaylr Interesed in your thoughts",
+          "createdAt": "2025-03-11T16:24:42Z",
+          "updatedAt": "2025-03-11T16:24:42Z"
+        },
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "I'm not 100% sure but I believe these check failures should resolve themselves once the new file is submitted for the first time",
+          "createdAt": "2025-03-11T16:25:41Z",
+          "updatedAt": "2025-03-11T16:25:41Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOEayXc6femRR",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "miketaylr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T17:57:28Z",
+          "updatedAt": "2025-03-11T17:57:28Z",
+          "comments": [
+            {
+              "originalPosition": 53,
+              "body": "```\r\n*** bad section normative: \"RFC6767\"\r\n/usr/lib/ruby/gems/3.3.0/gems/kramdown-rfc2629-1.7.24/lib/kramdown-rfc/command.rb:361:in `block in xml_from_sections': undefined method `each' for an instance of String (NoMethodError)\r\n```\r\n\r\nLooking at https://github.com/cabo/kramdown-rfc/blob/master/lib/kramdown-rfc/command.rb#L358-L361\r\n\r\nIs this barfing because of the empty string for `informative`? Is it valid to just delete that key?",
+              "createdAt": "2025-03-11T17:57:28Z",
+              "updatedAt": "2025-03-11T17:57:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fe1TA",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "miketaylr",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "(will review the actual content in a bit)",
+          "createdAt": "2025-03-11T18:13:51Z",
+          "updatedAt": "2025-03-11T18:34:39Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Can we follow this format? Something like `draft-sbingler-hstt-tracking-preventing.md`.",
+              "createdAt": "2025-03-11T18:13:51Z",
+              "updatedAt": "2025-03-11T18:34:39Z"
+            },
+            {
+              "originalPosition": 28,
+              "body": "Let's add March 2025 (or whatever the right format is)",
+              "createdAt": "2025-03-11T18:15:51Z",
+              "updatedAt": "2025-03-11T18:34:39Z"
+            },
+            {
+              "originalPosition": 27,
+              "body": "What's this for?",
+              "createdAt": "2025-03-11T18:20:52Z",
+              "updatedAt": "2025-03-11T18:34:39Z"
+            },
+            {
+              "originalPosition": 38,
+              "body": "Can we put in the WG we hope that would adopt this?",
+              "createdAt": "2025-03-11T18:22:07Z",
+              "updatedAt": "2025-03-11T18:34:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fpxbO",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "Ladankhamnian",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T13:40:14Z",
+          "updatedAt": "2025-03-12T14:03:39Z",
+          "comments": [
+            {
+              "originalPosition": 118,
+              "body": "nit: tracking/tracking the user",
+              "createdAt": "2025-03-12T13:40:14Z",
+              "updatedAt": "2025-03-12T14:03:39Z"
+            },
+            {
+              "originalPosition": 119,
+              "body": "nit: from setting HSTS data {/from setting HSTS data, {",
+              "createdAt": "2025-03-12T13:53:54Z",
+              "updatedAt": "2025-03-12T14:03:39Z"
+            },
+            {
+              "originalPosition": 149,
+              "body": "nit again: tracking/tracking the user",
+              "createdAt": "2025-03-12T14:00:58Z",
+              "updatedAt": "2025-03-12T14:03:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fth6a",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T18:29:38Z",
+          "updatedAt": "2025-03-12T18:29:38Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "After a lot of digging I found this\r\nhttps://www.rfc-editor.org/rfc/rfc7991.html#page-96\r\n\r\nThis is the \"stream\" that the document has been accepted into. After some reading I think this is better as \"independent\" for now.",
+              "createdAt": "2025-03-12T18:29:38Z",
+              "updatedAt": "2025-03-12T18:29:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6ftinJ",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T18:30:54Z",
+          "updatedAt": "2025-03-12T18:30:54Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "I'm not sure which WG would be the best fit for this change atm, RFC6797 was originally part of the `websec` group which has concluded.",
+              "createdAt": "2025-03-12T18:30:54Z",
+              "updatedAt": "2025-03-12T18:30:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6ftiyw",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T18:31:14Z",
+          "updatedAt": "2025-03-12T18:31:14Z",
+          "comments": [
+            {
+              "originalPosition": 53,
+              "body": "That seems reasonable, worth a shot.",
+              "createdAt": "2025-03-12T18:31:14Z",
+              "updatedAt": "2025-03-12T18:31:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fti8D",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T18:31:29Z",
+          "updatedAt": "2025-03-12T18:31:29Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "sgtm",
+              "createdAt": "2025-03-12T18:31:29Z",
+              "updatedAt": "2025-03-12T18:31:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6ftjTY",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T18:32:12Z",
+          "updatedAt": "2025-03-12T18:32:12Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "The template mentions that \"some\" fields will be set by the tooling. Unclear to me if this is one of them",
+              "createdAt": "2025-03-12T18:32:12Z",
+              "updatedAt": "2025-03-12T18:32:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuC3z",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:22:29Z",
+          "updatedAt": "2025-03-12T19:22:29Z",
+          "comments": [
+            {
+              "originalPosition": 53,
+              "body": "Seems reasonable, let's try it.",
+              "createdAt": "2025-03-12T19:22:29Z",
+              "updatedAt": "2025-03-12T19:22:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuC8U",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:22:37Z",
+          "updatedAt": "2025-03-12T19:22:37Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "sgtm",
+              "createdAt": "2025-03-12T19:22:37Z",
+              "updatedAt": "2025-03-12T19:22:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuDHd",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:22:57Z",
+          "updatedAt": "2025-03-12T19:22:57Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "Looks like there is a {Date} variable",
+              "createdAt": "2025-03-12T19:22:57Z",
+              "updatedAt": "2025-03-12T19:22:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuDwI",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:23:53Z",
+          "updatedAt": "2025-03-12T19:23:54Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "Eventually found https://www.rfc-editor.org/rfc/rfc7991.html#appendix-A.2 which describes this as the \"stream\" that the document belongs to.\r\n\r\nIt seems like independent is the best choice atm.",
+              "createdAt": "2025-03-12T19:23:53Z",
+              "updatedAt": "2025-03-12T19:23:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuEjH",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:25:17Z",
+          "updatedAt": "2025-03-12T19:25:17Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "I'm not sure ATM which WG would be the best option for this. RFC6797 was originally in the websec WG but that has since concluded.\r\n\r\nRemoved this section for now.",
+              "createdAt": "2025-03-12T19:25:17Z",
+              "updatedAt": "2025-03-12T19:25:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuE1q",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:25:51Z",
+          "updatedAt": "2025-03-12T19:25:52Z",
+          "comments": [
+            {
+              "originalPosition": 118,
+              "body": "Done.",
+              "createdAt": "2025-03-12T19:25:51Z",
+              "updatedAt": "2025-03-12T19:25:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuGdk",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:29:14Z",
+          "updatedAt": "2025-03-12T19:29:14Z",
+          "comments": [
+            {
+              "originalPosition": 119,
+              "body": "What do you mean?",
+              "createdAt": "2025-03-12T19:29:14Z",
+              "updatedAt": "2025-03-12T19:29:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOOEayXc6fuGsT",
+          "commit": {
+            "abbreviatedOid": "ee58e11"
+          },
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T19:29:42Z",
+          "updatedAt": "2025-03-12T19:29:42Z",
+          "comments": [
+            {
+              "originalPosition": 149,
+              "body": "Done.",
+              "createdAt": "2025-03-12T19:29:42Z",
+              "updatedAt": "2025-03-12T19:29:42Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
