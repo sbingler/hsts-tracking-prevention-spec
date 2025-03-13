@@ -7,7 +7,7 @@ submissiontype: independent  # also: "IETF", "editorial", "IAB", or "IRTF"
 date: {DATE}
 consensus: false
 v: 3
-area: sec
+# area: sec
 keyword:
  - HSTS
  - tracking prevention
