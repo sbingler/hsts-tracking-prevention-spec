@@ -7,17 +7,17 @@
 <title>HSTS Tracking Prevention</title>
 <meta content="Steven Bingler" name="author">
 <meta content="
-       As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
+       As mentioned in  , it's possible for entities in
 control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users. 
-       This document proposes a change to the user agent processing model of {RFC6797}
+       This document proposes a change to the user agent processing model of  
 to enable user agents to employ tracking mitigation methods. 
     " name="description">
 <meta content="xml2rfc 3.28.0" name="generator">
 <meta content="HSTS" name="keyword">
 <meta content="tracking prevention" name="keyword">
-<meta content="draft-hsts-tracking-prevention-latest" name="ietf.draft">
+<meta content="draft-bingler-hsts-tracking-prevention-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.28.0
     Python 3.12.9
@@ -1064,7 +1064,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Network Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-hsts-tracking-prevention-latest</dd>
+<dd class="internet-draft">draft-bingler-hsts-tracking-prevention-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2025-03-13" class="published">13 March 2025</time>
@@ -1085,12 +1085,20 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">HSTS Tracking Prevention</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
+<p id="section-abstract-1">As mentioned in <span><a href="https://rfc-editor.org/rfc/rfc6797#section-14.9" class="relref">Section 14.9</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>, it's possible for entities in
 control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">This document proposes a change to the user agent processing model of {RFC6797}
+<p id="section-abstract-2">This document proposes a change to the user agent processing model of <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>
 to enable user agents to employ tracking mitigation methods.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-discussion-venues">
+<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">Source for this draft and an issue tracker can be found at
+    <span><a href="https://github.com/sbingler/hsts-tracking-prevention-spec">https://github.com/sbingler/hsts-tracking-prevention-spec</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1186,14 +1194,14 @@ to enable user agents to employ tracking mitigation methods.<a href="#section-ab
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">HTTP Strict Transport Security (HSTS), {RFC6797}, improves security for users
+<p id="section-1-1">HTTP Strict Transport Security (HSTS), <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>, improves security for users
 by allowing a host to tell the user agent that it should only ever be accessed
 over a secure connection.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">However, the design of HSTS allows for servers to abuse its state caching in
 order to set and retrieve arbitrary data, potentially for the purposes of
-tracking a user around the web. {Section 14.9 of RFC6797} warns of this
+tracking a user around the web. <span><a href="https://rfc-editor.org/rfc/rfc6797#section-14.9" class="relref">Section 14.9</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> warns of this
 possibility but does not discuss prevention.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document offers some minor modifications to {Section 8 of RFC6797}
+<p id="section-1-3">This document offers some minor modifications to <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8" class="relref">Section 8</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>
 that allows for user agents to implement a way to prevent tracking of the user.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">It also touches on potential implementations.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
@@ -1249,7 +1257,7 @@ user’s visits between sites via HSTS upgrades.<a href="#section-3-5" class="pi
 <a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-prevent-servers-from-saving" class="section-name selfRef">Prevent Servers From Saving Tracking Data</a>
           </h4>
 <p id="section-3.1.1-1">To allow user agents the option of preventing hosts they believe are tracking
-the user from setting HSTS data {Section 8.1.1 of RFC6797} should be changed
+the user from setting HSTS data <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.1.1" class="relref">Section 8.1.1</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should be changed
 as follows:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.1-2">
 <pre>
@@ -1283,7 +1291,7 @@ as follows:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-prevent-servers-from-retrie" class="section-name selfRef">Prevent Servers From Retrieving Tracking Data.</a>
           </h4>
 <p id="section-3.1.2-1">To allow user agents the option of preventing hosts they believe are tracking
-the user from retrieving HSTS data {Section 8.3 of RFC6797} should be changed
+the user from retrieving HSTS data <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.3" class="relref">Section 8.3</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should be changed
 as follows:<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.2-2">
 <pre>
@@ -1320,7 +1328,7 @@ of different sites separated, so that even if tracker.example is embedded into
 both site.example and othersite.example it cannot easily track users between
 those sites. Doing this is frequently referred to as partitioning.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
 <p id="section-3.1.3-2">This can be allowed by modifying the storage and indexing requirement of
-{Section 5.3 of RFC6797} to allow for partitioning of the HSTS policy Store.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<span><a href="https://rfc-editor.org/rfc/rfc6797#section-5.3" class="relref">Section 5.3</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> to allow for partitioning of the HSTS policy Store.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-3">
 <pre>
    UAs store and index HSTS Policies based strictly upon the domain
@@ -1347,7 +1355,7 @@ those sites. Doing this is frequently referred to as partitioning.<a href="#sect
    whose domain names are...
 </pre><a href="#section-3.1.3-5" class="pilcrow">¶</a>
 </div>
-<p id="section-3.1.3-6">{Section 8.2 of RFC6797} should receive a similar change<a href="#section-3.1.3-6" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-6"><span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.2" class="relref">Section 8.2</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should receive a similar change<a href="#section-3.1.3-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-7">
 <pre>
    A given domain name may match a Known HSTS Host's domain name in one
