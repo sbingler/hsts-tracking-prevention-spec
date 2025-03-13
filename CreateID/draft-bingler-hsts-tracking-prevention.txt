@@ -4,8 +4,8 @@
 
 Network Working Group                                         S. Bingler
 Internet-Draft                                                    Google
-Intended status: Informational                             12 March 2025
-Expires: 13 September 2025
+Intended status: Informational                             13 March 2025
+Expires: 14 September 2025
 
 
                         HSTS Tracking Prevention
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 September 2025.
+   This Internet-Draft will expire on 14 September 2025.
 
 Copyright Notice
 
@@ -80,7 +80,7 @@ Table of Contents
    RFC6797} that allows for user agents to implement a way to prevent
    tracking of the user.
 
-   It also touches on potential implementations and their downsides.
+   It also touches on potential implementations.
 
 2.  Conventions and Definitions
 
@@ -92,7 +92,7 @@ Table of Contents
 
 3.  HSTS Tracking Prevention
 
-   Tracking prevention can take a couple of forms:
+   Tracking prevention could take one of a few forms:
 
    *  Prevent servers from setting tracking data.
 
@@ -144,9 +144,6 @@ Table of Contents
 
     Otherwise, if the substring...
 
-   {Section 2.4.1.1 of RFC6797} step 4 may also need to be rewritten in
-   a similar fashion.
-
 3.1.2.  Prevent Servers From Retrieving Tracking Data.
 
    To allow user agents the option of preventing hosts they believe are
@@ -164,8 +161,8 @@ Table of Contents
    1.  Extract from the URI any substring described by the host
        component of the authority component of the URI.
 
-   2. If the UA has reason to believe this host intends to retrieve tracking
-      data then the UA MAY abort this algorithm.
+   2.  If the UA has reason to believe this host intends to retrieve tracking
+       data then the UA MAY abort this algorithm.
 
    2.  If the substring is null, then there is no match with any Known
        HSTS Host.
@@ -175,7 +172,7 @@ Table of Contents
    Making data correlation infeasible for tracking servers could be
    implemented a number of ways, but a straightforward design would be
    to keep the HSTS policies of different sites separated, so that even
-   if tracker.example is embedded into site.example and
+   if tracker.example is embedded into both site.example and
    othersite.example it cannot easily track users between those sites.
    Doing this is frequently referred to as partitioning.
 
