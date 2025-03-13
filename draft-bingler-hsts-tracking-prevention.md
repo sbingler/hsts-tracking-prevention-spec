@@ -23,12 +23,12 @@ normative:
 
 --- abstract
 
-As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
+As mentioned in {{Section 14.9 of RFC6797}}, it's possible for entities in
 control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users.
 
-This document proposes a change to the user agent processing model of {RFC6797}
+This document proposes a change to the user agent processing model of {{RFC6797}}
 to enable user agents to employ tracking mitigation methods.
 
 
@@ -36,16 +36,16 @@ to enable user agents to employ tracking mitigation methods.
 
 # Introduction
 
-HTTP Strict Transport Security (HSTS), {RFC6797}, improves security for users
+HTTP Strict Transport Security (HSTS), {{RFC6797}}, improves security for users
 by allowing a host to tell the user agent that it should only ever be accessed
 over a secure connection.
 
 However, the design of HSTS allows for servers to abuse its state caching in
 order to set and retrieve arbitrary data, potentially for the purposes of
-tracking a user around the web. {Section 14.9 of RFC6797} warns of this
+tracking a user around the web. {{Section 14.9 of RFC6797}} warns of this
 possibility but does not discuss prevention.
 
-This document offers some minor modifications to {Section 8 of RFC6797}
+This document offers some minor modifications to {{Section 8 of RFC6797}}
 that allows for user agents to implement a way to prevent tracking of the user.
 
 It also touches on potential implementations.
@@ -84,7 +84,7 @@ user’s visits between sites via HSTS upgrades.
 ### Prevent Servers From Saving Tracking Data
 
 To allow user agents the option of preventing hosts they believe are tracking
-the user from setting HSTS data {Section 8.1.1 of RFC6797} should be changed
+the user from setting HSTS data {{Section 8.1.1 of RFC6797}} should be changed
 as follows:
 
 ~~~
@@ -113,7 +113,7 @@ should be modified to include
 ### Prevent Servers From Retrieving Tracking Data.
 
 To allow user agents the option of preventing hosts they believe are tracking
-the user from retrieving HSTS data {Section 8.3 of RFC6797} should be changed
+the user from retrieving HSTS data {{Section 8.3 of RFC6797}} should be changed
 as follows:
 
 ~~~
@@ -146,7 +146,7 @@ both site.example and othersite.example it cannot easily track users between
 those sites. Doing this is frequently referred to as partitioning.
 
 This can be allowed by modifying the storage and indexing requirement of
-{Section 5.3 of RFC6797} to allow for partitioning of the HSTS policy Store.
+{{Section 5.3 of RFC6797}} to allow for partitioning of the HSTS policy Store.
 
 ~~~
    UAs store and index HSTS Policies based strictly upon the domain
@@ -173,7 +173,7 @@ Should be modified to include
    whose domain names are...
 ~~~
 
-{Section 8.2 of RFC6797} should receive a similar change
+{{Section 8.2 of RFC6797}} should receive a similar change
 
 ~~~
    A given domain name may match a Known HSTS Host's domain name in one
