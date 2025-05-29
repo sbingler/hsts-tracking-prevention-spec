@@ -7,26 +7,26 @@
 <title>HSTS Tracking Prevention</title>
 <meta content="Steven Bingler" name="author">
 <meta content="
-       As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
-control of multiple hosts to encode arbitrary data within a user agent's HSTS 
+       As mentioned in  , it's possible for entities in
+control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users. 
-       This document proposes a change to the user agent processing model of {RFC6797}
+       This document proposes a change to the user agent processing model of  
 to enable user agents to employ tracking mitigation methods. 
     " name="description">
-<meta content="xml2rfc 3.28.0" name="generator">
+<meta content="xml2rfc 3.28.1" name="generator">
 <meta content="HSTS" name="keyword">
 <meta content="tracking prevention" name="keyword">
-<meta content="draft-hsts-tracking-prevention-latest" name="ietf.draft">
+<meta content="draft-bingler-hsts-tracking-prevention-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.0
-    Python 3.12.9
+  xml2rfc 3.28.1
+    Python 3.12.10
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.5
+    Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.6
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1050,11 +1050,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">HSTS Tracking Prevention</td>
-<td class="right">March 2025</td>
+<td class="right">May 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Bingler</td>
-<td class="center">Expires 14 September 2025</td>
+<td class="center">Expires 30 November 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1064,15 +1064,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Network Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-hsts-tracking-prevention-latest</dd>
+<dd class="internet-draft">draft-bingler-hsts-tracking-prevention-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-13" class="published">13 March 2025</time>
+<time datetime="2025-05-29" class="published">29 May 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-14">14 September 2025</time></dd>
+<dd class="expires"><time datetime="2025-11-30">30 November 2025</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1085,12 +1085,20 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">HSTS Tracking Prevention</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">As mentioned in {Section 14.9 of RFC6797}, it's possible for entities in
-control of multiple hosts to encode arbitrary data within a user agent's HSTS 
+<p id="section-abstract-1">As mentioned in <span><a href="https://rfc-editor.org/rfc/rfc6797#section-14.9" class="relref">Section 14.9</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>, it's possible for entities in
+control of multiple hosts to encode arbitrary data within a user agent's HSTS
 policy store. This data can later be retrieved and could be used to identify
 users.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">This document proposes a change to the user agent processing model of {RFC6797}
+<p id="section-abstract-2">This document proposes a change to the user agent processing model of <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>
 to enable user agents to employ tracking mitigation methods.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-discussion-venues">
+<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">Source for this draft and an issue tracker can be found at
+    <span><a href="https://github.com/sbingler/hsts-tracking-prevention-spec">https://github.com/sbingler/hsts-tracking-prevention-spec</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1111,7 +1119,7 @@ to enable user agents to employ tracking mitigation methods.<a href="#section-ab
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 30 November 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1172,10 +1180,7 @@ to enable user agents to employ tracking mitigation methods.<a href="#section-ab
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
@@ -1186,14 +1191,14 @@ to enable user agents to employ tracking mitigation methods.<a href="#section-ab
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">HTTP Strict Transport Security (HSTS), {RFC6797}, improves security for users
+<p id="section-1-1">HTTP Strict Transport Security (HSTS), <span>[<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>, improves security for users
 by allowing a host to tell the user agent that it should only ever be accessed
 over a secure connection.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">However, the design of HSTS allows for servers to abuse its state caching in
 order to set and retrieve arbitrary data, potentially for the purposes of
-tracking a user around the web. {Section 14.9 of RFC6797} warns of this
+tracking a user around the web. <span><a href="https://rfc-editor.org/rfc/rfc6797#section-14.9" class="relref">Section 14.9</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> warns of this
 possibility but does not discuss prevention.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">This document offers some minor modifications to {Section 8 of RFC6797}
+<p id="section-1-3">This document offers some minor modifications to <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8" class="relref">Section 8</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span>
 that allows for user agents to implement a way to prevent tracking of the user.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">It also touches on potential implementations.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
@@ -1249,30 +1254,30 @@ user’s visits between sites via HSTS upgrades.<a href="#section-3-5" class="pi
 <a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-prevent-servers-from-saving" class="section-name selfRef">Prevent Servers From Saving Tracking Data</a>
           </h4>
 <p id="section-3.1.1-1">To allow user agents the option of preventing hosts they believe are tracking
-the user from setting HSTS data {Section 8.1.1 of RFC6797} should be changed
+the user from setting HSTS data <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.1.1" class="relref">Section 8.1.1</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should be changed
 as follows:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.1-2">
 <pre>
-   If the substring matching the host production from the Request-URI
-   (of the message to which the host responded) syntactically matches
-   the IP-literal or IPv4address productions from Section 3.2.2 of
-   [RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
+If the substring matching the host production from the Request-URI
+(of the message to which the host responded) syntactically matches
+the IP-literal or IPv4address productions from Section 3.2.2 of
+[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
 
-   Otherwise, if the substring...
+Otherwise, if the substring...
 </pre><a href="#section-3.1.1-2" class="pilcrow">¶</a>
 </div>
 <p id="section-3.1.1-3">should be modified to include<a href="#section-3.1.1-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.1-4">
 <pre>
-   If the substring matching the host production from the Request-URI
-   (of the message to which the host responded) syntactically matches
-   the IP-literal or IPv4address productions from Section 3.2.2 of
-   [RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
+If the substring matching the host production from the Request-URI
+(of the message to which the host responded) syntactically matches
+the IP-literal or IPv4address productions from Section 3.2.2 of
+[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
 
-   If the UA has reason to believe this host intends to set tracking
-   data then the UA MAY not note this host as a Known HSTS Host.
+If the UA has reason to believe this host intends to set tracking
+data then the UA MAY not note this host as a Known HSTS Host.
 
-   Otherwise, if the substring...
+Otherwise, if the substring...
 </pre><a href="#section-3.1.1-4" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1283,28 +1288,28 @@ as follows:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-prevent-servers-from-retrie" class="section-name selfRef">Prevent Servers From Retrieving Tracking Data.</a>
           </h4>
 <p id="section-3.1.2-1">To allow user agents the option of preventing hosts they believe are tracking
-the user from retrieving HSTS data {Section 8.3 of RFC6797} should be changed
+the user from retrieving HSTS data <span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.3" class="relref">Section 8.3</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should be changed
 as follows:<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.2-2">
 <pre>
-   1.  Extract from the URI any substring described by the host
-       component of the authority component of the URI.
+1. Extract from the URI any substring described by the host
+   component of the authority component of the URI.
 
-   2.  If the substring is null, then there is no match with any Known
-       HSTS Host.
+2. If the substring is null, then there is no match with any Known
+   HSTS Host.
 </pre><a href="#section-3.1.2-2" class="pilcrow">¶</a>
 </div>
 <p id="section-3.1.2-3">should be modified to include<a href="#section-3.1.2-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.2-4">
 <pre>
-   1.  Extract from the URI any substring described by the host
-       component of the authority component of the URI.
+1. Extract from the URI any substring described by the host
+   component of the authority component of the URI.
 
-   2.  If the UA has reason to believe this host intends to retrieve tracking
-       data then the UA MAY abort this algorithm.
+2. If the UA has reason to believe this host intends to retrieve
+   tracking data then the UA MAY abort this algorithm.
 
-   2.  If the substring is null, then there is no match with any Known
-       HSTS Host.
+3. If the substring is null, then there is no match with any Known
+   HSTS Host.
 </pre><a href="#section-3.1.2-4" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1320,57 +1325,58 @@ of different sites separated, so that even if tracker.example is embedded into
 both site.example and othersite.example it cannot easily track users between
 those sites. Doing this is frequently referred to as partitioning.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
 <p id="section-3.1.3-2">This can be allowed by modifying the storage and indexing requirement of
-{Section 5.3 of RFC6797} to allow for partitioning of the HSTS policy Store.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<span><a href="https://rfc-editor.org/rfc/rfc6797#section-5.3" class="relref">Section 5.3</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> to allow for partitioning of the HSTS policy Store.<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-3">
 <pre>
-   UAs store and index HSTS Policies based strictly upon the domain
-   names of the issuing HSTS Hosts.
+UAs store and index HSTS Policies based strictly upon the domain
+names of the issuing HSTS Hosts.
 
-   This means that UAs will maintain the HSTS Policy of any given HSTS
-   Host separately from any HSTS Policies issued by any other HSTS Hosts
-   whose domain names are...
+This means that UAs will maintain the HSTS Policy of any given HSTS
+Host separately from any HSTS Policies issued by any other HSTS Hosts
+whose domain names are...
 </pre><a href="#section-3.1.3-3" class="pilcrow">¶</a>
 </div>
 <p id="section-3.1.3-4">Should be modified to include<a href="#section-3.1.3-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-5">
 <pre>
-   UAs store and index HSTS Policies based strictly upon the domain
-   names of the issuing HSTS Hosts.
+UAs store and index HSTS Policies based strictly upon the domain
+names of the issuing HSTS Hosts.
 
-   Note: UAs MAY decide to partition their HSTS policies by other inputs such
-   as the top-level site the agent has been navigated to. In this case the UA
-   should store and index HSTS Policies within that partition based strictly
-   upon the domain names of the issuing HSTS Hosts.
+Note: UAs MAY decide to partition their HSTS policies by other inputs
+such as the top-level site the agent has been navigated to. In this
+case the UA should store and index HSTS Policies within that
+partition based strictly upon the domain names of the issuing HSTS
+Hosts.
 
-   This means that UAs will maintain the HSTS Policy of any given HSTS
-   Host separately from any HSTS Policies issued by any other HSTS Hosts
-   whose domain names are...
+This means that UAs will maintain the HSTS Policy of any given HSTS
+Host separately from any HSTS Policies issued by any other HSTS Hosts
+whose domain names are...
 </pre><a href="#section-3.1.3-5" class="pilcrow">¶</a>
 </div>
-<p id="section-3.1.3-6">{Section 8.2 of RFC6797} should receive a similar change<a href="#section-3.1.3-6" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-6"><span><a href="https://rfc-editor.org/rfc/rfc6797#section-8.2" class="relref">Section 8.2</a> of [<a href="#RFC6797" class="cite xref">RFC6797</a>]</span> should receive a similar change<a href="#section-3.1.3-6" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-7">
 <pre>
-   A given domain name may match a Known HSTS Host's domain name in one
-   or both of two fashions: a congruent match, or a superdomain match.
-   Alternatively, there may be no match.
+A given domain name may match a Known HSTS Host's domain name in one
+or both of two fashions: a congruent match, or a superdomain match.
+Alternatively, there may be no match.
 
-   The steps below determine whether there are any matches, and if so,
-   of which fashion:
+The steps below determine whether there are any matches, and if so,
+of which fashion:
 </pre><a href="#section-3.1.3-7" class="pilcrow">¶</a>
 </div>
 <p id="section-3.1.3-8">Should be modified to include<a href="#section-3.1.3-8" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-3.1.3-9">
 <pre>
-   A given domain name may match a Known HSTS Host's domain name in one
-   or both of two fashions: a congruent match, or a superdomain match.
-   Alternatively, there may be no match.
+A given domain name may match a Known HSTS Host's domain name in one
+or both of two fashions: a congruent match, or a superdomain match.
+Alternatively, there may be no match.
 
-   Note: If the UA has decided to partition its HSTS Policies then the
-   following algorithm MUST be performed only on HSTS Policies within the
-   applicable partition.
+Note: If the UA has decided to partition its HSTS Policies then the
+following algorithm MUST be performed only on HSTS Policies within the
+applicable partition.
 
-   The steps below determine whether there are any matches, and if so,
-   of which fashion:
+The steps below determine whether there are any matches, and if so,
+of which fashion:
 </pre><a href="#section-3.1.3-9" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1420,16 +1426,8 @@ security decreases.<a href="#section-4-1" class="pilcrow">¶</a></p>
 </dl>
 </section>
 </div>
-<div id="acknowledgments">
-<section id="appendix-A">
-      <h2 id="name-acknowledgments">
-<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
-      </h2>
-<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-</section>
-</div>
 <div id="authors-addresses">
-<section id="appendix-B">
+<section id="appendix-A">
       <h2 id="name-authors-address">
 <a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
       </h2>
