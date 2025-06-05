@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-01T02:28:01.213381+00:00",
+  "timestamp": "2025-06-05T02:03:58.327961+00:00",
   "repo": "sbingler/hsts-tracking-prevention-spec",
   "labels": [
     {
@@ -55,15 +55,15 @@
       "id": "I_kwDOOEayXc64ujTf",
       "title": "Use blockquotes, not code blocks",
       "url": "https://github.com/sbingler/hsts-tracking-prevention-spec/issues/2",
-      "state": "CLOSED",
+      "state": "OPEN",
       "author": "martinthomson",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "The quoting used currently uses code blocks for quotes, which turns the quoted text into fixed-width chunks.  This has the unfortunate effect of making the text scroll horizontally in some formats because the quoted text is more than 69 columns wide (and it includes multiple leading spaces on each line as a bonus).\n\nThe fix is to use blockquotes instead.  That is,\n\n```\n> Quote this\n```\n\nRather than,\n\n```\n~~~\n    Quote this\n~~~\n```",
       "createdAt": "2025-05-29T05:21:14Z",
-      "updatedAt": "2025-05-29T21:21:56Z",
-      "closedAt": "2025-05-29T21:21:56Z",
+      "updatedAt": "2025-06-05T00:11:47Z",
+      "closedAt": null,
       "comments": [
         {
           "author": "sbingler",
@@ -71,6 +71,27 @@
           "body": "Thanks for the call out.\n\nI kept the code blocks, because I prefer the way they visually stand out, but I modified the text to stay within the char limit which removes the horizontal scrolls",
           "createdAt": "2025-05-29T19:14:29Z",
           "updatedAt": "2025-05-29T19:14:29Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "NONE",
+          "body": "That's an abuse of the semantics of those elements.  I know that there is a particular presentation that might lead to you preferring that, but the point of `<blockquote>` over `<sourcecode>` (or worse, `<artwork>`) is to distinguish quoted elements from code.  This is quoted content that you are forcibly wrapping to fit it into fixed width output.  That makes pulling quotes more difficult.\n\nIf your goal is better visual separation, then that's a styling issue that can be addressed in any number of ways.",
+          "createdAt": "2025-06-04T04:08:10Z",
+          "updatedAt": "2025-06-04T04:08:10Z"
+        },
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "Those are fair points.\n\n> If your goal is better visual separation, then that's a styling issue that can be addressed in any number of ways.\n\nDo you have any suggestions? Is there a setting within the script(s) that I can modify?\nI'd like to get the vertical line to the left of the quoted text, as is done in most markdown (such as above).",
+          "createdAt": "2025-06-04T21:11:28Z",
+          "updatedAt": "2025-06-04T21:11:28Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "NONE",
+          "body": "I don't know where things are at for blockquote elements across different presentations.  As far as I'm aware, there are four operative \"stylesheets\" that might be in play:\n\n1. The default HTML view, which is probably the main one you would be concerned with.  In that, a blockquote is rendered in a shaded box with a defined outline.\n2. The HTML view that I use (the one you will see on GitHub pages here).  In that, a blockquote is rendered with an indent and italics.\n3. The fake \"text\" view that is used on datatracker.  In that, a blockquote is rendered with an indent and a solid line to the left.\n4. The plaintext output.  In that a blockquote is rendered with an indent with a vertical bar in the left column.\n\nI'm personally open to changing the second one if you make a case that makes sense.  I am only following what I understand to be common typesetting conventions for quotations, rather than the weird text-based convention we presently have.  (FWIW, an unstyled blockquote just indents in my browser.)\n\nJust so you are aware, a blockquote in kramdown needs to look like this:\n\n```markdown\n{:quote}\n> This text is quoted\n>\n> * This is a quoted list\n```\n\nWithout the `{:quote}`, you get an unbulleted list, which is almost never what you want.",
+          "createdAt": "2025-06-05T00:11:46Z",
+          "updatedAt": "2025-06-05T00:11:46Z"
         }
       ]
     }
