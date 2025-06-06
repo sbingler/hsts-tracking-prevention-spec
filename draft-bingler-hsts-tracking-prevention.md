@@ -87,28 +87,26 @@ To allow user agents the option of preventing hosts they believe are tracking
 the user from setting HSTS data {{Section 8.1.1 of RFC6797}} should be changed
 as follows:
 
-~~~
-If the substring matching the host production from the Request-URI
-(of the message to which the host responded) syntactically matches
-the IP-literal or IPv4address productions from Section 3.2.2 of
-[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
-
-Otherwise, if the substring...
-~~~
+{:quote}
+>If the substring matching the host production from the Request-URI
+>(of the message to which the host responded) syntactically matches
+>the IP-literal or IPv4address productions from Section 3.2.2 of
+>[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
+>
+>Otherwise, if the substring...
 
 should be modified to include
 
-~~~
-If the substring matching the host production from the Request-URI
-(of the message to which the host responded) syntactically matches
-the IP-literal or IPv4address productions from Section 3.2.2 of
-[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
-
-If the UA has reason to believe this host intends to set tracking
-data then the UA MAY not note this host as a Known HSTS Host.
-
-Otherwise, if the substring...
-~~~
+{:quote}
+>If the substring matching the host production from the Request-URI
+>(of the message to which the host responded) syntactically matches
+>the IP-literal or IPv4address productions from Section 3.2.2 of
+>[RFC3986], then the UA MUST NOT note this host as a Known HSTS Host.
+>
+>If the UA has reason to believe this host intends to set tracking
+>data then the UA MAY not note this host as a Known HSTS Host.
+>
+>Otherwise, if the substring...
 
 ### Prevent Servers From Retrieving Tracking Data.
 
@@ -116,26 +114,25 @@ To allow user agents the option of preventing hosts they believe are tracking
 the user from retrieving HSTS data {{Section 8.3 of RFC6797}} should be changed
 as follows:
 
-~~~
-1. Extract from the URI any substring described by the host
-   component of the authority component of the URI.
+{:quote}
+>1.  Extract from the URI any substring described by the host
+>    component of the authority component of the URI.
+>
+>2.  If the substring is null, then there is no match with any Known
+>    HSTS Host.
 
-2. If the substring is null, then there is no match with any Known
-   HSTS Host.
-~~~
 
 should be modified to include
 
-~~~
-1. Extract from the URI any substring described by the host
-   component of the authority component of the URI.
-
-2. If the UA has reason to believe this host intends to retrieve
-   tracking data then the UA MAY abort this algorithm.
-
-3. If the substring is null, then there is no match with any Known
-   HSTS Host.
-~~~
+{:quote}
+>1.  Extract from the URI any substring described by the host
+>    component of the authority component of the URI.
+>
+>2.  If the UA has reason to believe this host intends to retrieve tracking
+>    data then the UA MAY abort this algorithm.
+>
+>3.  If the substring is null, then there is no match with any Known
+>    HSTS Host.
 
 ### Make Correlating Data Between Sites Infeasible
 
@@ -148,57 +145,52 @@ those sites. Doing this is frequently referred to as partitioning.
 This can be allowed by modifying the storage and indexing requirement of
 {{Section 5.3 of RFC6797}} to allow for partitioning of the HSTS policy Store.
 
-~~~
-UAs store and index HSTS Policies based strictly upon the domain
-names of the issuing HSTS Hosts.
-
-This means that UAs will maintain the HSTS Policy of any given HSTS
-Host separately from any HSTS Policies issued by any other HSTS Hosts
-whose domain names are...
-~~~
+{:quote}
+>UAs store and index HSTS Policies based strictly upon the domain
+>names of the issuing HSTS Hosts.
+>
+>This means that UAs will maintain the HSTS Policy of any given HSTS
+>Host separately from any HSTS Policies issued by any other HSTS Hosts
+>whose domain names are...
 
 Should be modified to include
 
-~~~
-UAs store and index HSTS Policies based strictly upon the domain
-names of the issuing HSTS Hosts.
-
-Note: UAs MAY decide to partition their HSTS policies by other inputs
-such as the top-level site the agent has been navigated to. In this
-case the UA should store and index HSTS Policies within that
-partition based strictly upon the domain names of the issuing HSTS
-Hosts.
-
-This means that UAs will maintain the HSTS Policy of any given HSTS
-Host separately from any HSTS Policies issued by any other HSTS Hosts
-whose domain names are...
-~~~
+{:quote}
+>UAs store and index HSTS Policies based strictly upon the domain
+>names of the issuing HSTS Hosts.
+>
+>Note: UAs MAY decide to partition their HSTS policies by other inputs such
+>as the top-level site the agent has been navigated to. In this case the UA
+>should store and index HSTS Policies within that partition based strictly
+>upon the domain names of the issuing HSTS Hosts.
+>
+>This means that UAs will maintain the HSTS Policy of any given HSTS
+>Host separately from any HSTS Policies issued by any other HSTS Hosts
+>whose domain names are...
 
 {{Section 8.2 of RFC6797}} should receive a similar change
 
-~~~
-A given domain name may match a Known HSTS Host's domain name in one
-or both of two fashions: a congruent match, or a superdomain match.
-Alternatively, there may be no match.
-
-The steps below determine whether there are any matches, and if so,
-of which fashion:
-~~~
+{:quote}
+>A given domain name may match a Known HSTS Host's domain name in one
+>or both of two fashions: a congruent match, or a superdomain match.
+>Alternatively, there may be no match.
+>
+>The steps below determine whether there are any matches, and if so,
+>of which fashion:
 
 Should be modified to include
 
-~~~
-A given domain name may match a Known HSTS Host's domain name in one
-or both of two fashions: a congruent match, or a superdomain match.
-Alternatively, there may be no match.
-
-Note: If the UA has decided to partition its HSTS Policies then the
-following algorithm MUST be performed only on HSTS Policies within the
-applicable partition.
-
-The steps below determine whether there are any matches, and if so,
-of which fashion:
-~~~
+{:quote}
+>A given domain name may match a Known HSTS Host's domain name in one
+>or both of two fashions: a congruent match, or a superdomain match.
+>Alternatively, there may be no match.
+>
+>Note: If the UA has decided to partition its HSTS Policies then the
+>following algorithm MUST be performed only on HSTS Policies within the
+>applicable partition.
+>
+>The steps below determine whether there are any matches, and if so,
+>of which fashion:
 
 # Security Considerations
 
