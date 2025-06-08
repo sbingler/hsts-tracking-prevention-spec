@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-05T02:03:58.327961+00:00",
+  "timestamp": "2025-06-08T02:19:25.151651+00:00",
   "repo": "sbingler/hsts-tracking-prevention-spec",
   "labels": [
     {
@@ -62,7 +62,7 @@
       "labels": [],
       "body": "The quoting used currently uses code blocks for quotes, which turns the quoted text into fixed-width chunks.  This has the unfortunate effect of making the text scroll horizontally in some formats because the quoted text is more than 69 columns wide (and it includes multiple leading spaces on each line as a bonus).\n\nThe fix is to use blockquotes instead.  That is,\n\n```\n> Quote this\n```\n\nRather than,\n\n```\n~~~\n    Quote this\n~~~\n```",
       "createdAt": "2025-05-29T05:21:14Z",
-      "updatedAt": "2025-06-05T00:11:47Z",
+      "updatedAt": "2025-06-06T17:53:37Z",
       "closedAt": null,
       "comments": [
         {
@@ -92,6 +92,13 @@
           "body": "I don't know where things are at for blockquote elements across different presentations.  As far as I'm aware, there are four operative \"stylesheets\" that might be in play:\n\n1. The default HTML view, which is probably the main one you would be concerned with.  In that, a blockquote is rendered in a shaded box with a defined outline.\n2. The HTML view that I use (the one you will see on GitHub pages here).  In that, a blockquote is rendered with an indent and italics.\n3. The fake \"text\" view that is used on datatracker.  In that, a blockquote is rendered with an indent and a solid line to the left.\n4. The plaintext output.  In that a blockquote is rendered with an indent with a vertical bar in the left column.\n\nI'm personally open to changing the second one if you make a case that makes sense.  I am only following what I understand to be common typesetting conventions for quotations, rather than the weird text-based convention we presently have.  (FWIW, an unstyled blockquote just indents in my browser.)\n\nJust so you are aware, a blockquote in kramdown needs to look like this:\n\n```markdown\n{:quote}\n> This text is quoted\n>\n> * This is a quoted list\n```\n\nWithout the `{:quote}`, you get an unbulleted list, which is almost never what you want.",
           "createdAt": "2025-06-05T00:11:46Z",
           "updatedAt": "2025-06-05T00:11:46Z"
+        },
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "> Just so you are aware, a blockquote in kramdown needs to look like this:\n\nI wasn't aware, that makes a noticeable difference. Without it the text is simply indented in the html file\n\n> The HTML view that I use (the one you will see on GitHub pages here). In that, a blockquote is rendered with an indent and italics.\n\nThe italics make it stand out enough for me. (Though I'm not opposed if someone wants to go through and edit the stylesheet)\n\nI'll work on a new PR that reverts the most recent and changes code blocks to block quotes.",
+          "createdAt": "2025-06-06T17:04:04Z",
+          "updatedAt": "2025-06-06T17:53:36Z"
         }
       ]
     }
@@ -645,6 +652,40 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOOEayXc6ZbjiM",
+      "title": "Use block quotes",
+      "url": "https://github.com/sbingler/hsts-tracking-prevention-spec/pull/4",
+      "state": "OPEN",
+      "author": "sbingler",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #2 \r\n\r\nRefactors the spec quotes to use block quotes instead of code blocks.\r\n\r\nAlso does a drive by fix of a mis-numbered list.",
+      "createdAt": "2025-06-06T18:09:06Z",
+      "updatedAt": "2025-06-06T18:10:03Z",
+      "baseRepository": "sbingler/hsts-tracking-prevention-spec",
+      "baseRefName": "main",
+      "baseRefOid": "12a4ddb22f639d447c07bf8a49043f05fdabd0b8",
+      "headRepository": "sbingler/hsts-tracking-prevention-spec",
+      "headRefName": "UseBlockQuotes",
+      "headRefOid": "e6af993a0236a0a18196b689c30ade1b35ebe3c0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "@martinthomson PTAL, everything seems fine from what I can tell. But maybe I'm missing something important (like I was with `{:quote}`)?\r\n",
+          "createdAt": "2025-06-06T18:10:01Z",
+          "updatedAt": "2025-06-06T18:10:01Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
