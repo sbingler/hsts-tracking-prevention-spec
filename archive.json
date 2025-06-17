@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-08T02:19:25.151651+00:00",
+  "timestamp": "2025-06-17T02:06:20.674667+00:00",
   "repo": "sbingler/hsts-tracking-prevention-spec",
   "labels": [
     {
@@ -665,7 +665,7 @@
       "labels": [],
       "body": "Closes #2 \r\n\r\nRefactors the spec quotes to use block quotes instead of code blocks.\r\n\r\nAlso does a drive by fix of a mis-numbered list.",
       "createdAt": "2025-06-06T18:09:06Z",
-      "updatedAt": "2025-06-06T18:10:03Z",
+      "updatedAt": "2025-06-16T16:47:58Z",
       "baseRepository": "sbingler/hsts-tracking-prevention-spec",
       "baseRefName": "main",
       "baseRefOid": "12a4ddb22f639d447c07bf8a49043f05fdabd0b8",
@@ -683,6 +683,20 @@
           "body": "@martinthomson PTAL, everything seems fine from what I can tell. But maybe I'm missing something important (like I was with `{:quote}`)?\r\n",
           "createdAt": "2025-06-06T18:10:01Z",
           "updatedAt": "2025-06-06T18:10:01Z"
+        },
+        {
+          "author": "martinthomson",
+          "authorAssociation": "NONE",
+          "body": "https://sbingler.github.io/hsts-tracking-prevention-spec/UseBlockQuotes/draft-bingler-hsts-tracking-prevention.html looks pretty reasonable to me.",
+          "createdAt": "2025-06-16T03:55:04Z",
+          "updatedAt": "2025-06-16T03:55:04Z"
+        },
+        {
+          "author": "sbingler",
+          "authorAssociation": "OWNER",
+          "body": "@Ladankhamnian Gentle ping",
+          "createdAt": "2025-06-16T16:47:58Z",
+          "updatedAt": "2025-06-16T16:47:58Z"
         }
       ],
       "reviews": []
