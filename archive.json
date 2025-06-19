@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-17T02:06:20.674667+00:00",
+  "timestamp": "2025-06-19T02:06:12.251656+00:00",
   "repo": "sbingler/hsts-tracking-prevention-spec",
   "labels": [
     {
@@ -55,15 +55,15 @@
       "id": "I_kwDOOEayXc64ujTf",
       "title": "Use blockquotes, not code blocks",
       "url": "https://github.com/sbingler/hsts-tracking-prevention-spec/issues/2",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "martinthomson",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "The quoting used currently uses code blocks for quotes, which turns the quoted text into fixed-width chunks.  This has the unfortunate effect of making the text scroll horizontally in some formats because the quoted text is more than 69 columns wide (and it includes multiple leading spaces on each line as a bonus).\n\nThe fix is to use blockquotes instead.  That is,\n\n```\n> Quote this\n```\n\nRather than,\n\n```\n~~~\n    Quote this\n~~~\n```",
       "createdAt": "2025-05-29T05:21:14Z",
-      "updatedAt": "2025-06-06T17:53:37Z",
-      "closedAt": null,
+      "updatedAt": "2025-06-18T20:21:27Z",
+      "closedAt": "2025-06-18T20:21:27Z",
       "comments": [
         {
           "author": "sbingler",
@@ -658,24 +658,26 @@
       "id": "PR_kwDOOEayXc6ZbjiM",
       "title": "Use block quotes",
       "url": "https://github.com/sbingler/hsts-tracking-prevention-spec/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "sbingler",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Closes #2 \r\n\r\nRefactors the spec quotes to use block quotes instead of code blocks.\r\n\r\nAlso does a drive by fix of a mis-numbered list.",
       "createdAt": "2025-06-06T18:09:06Z",
-      "updatedAt": "2025-06-16T16:47:58Z",
+      "updatedAt": "2025-06-18T20:21:34Z",
       "baseRepository": "sbingler/hsts-tracking-prevention-spec",
       "baseRefName": "main",
       "baseRefOid": "12a4ddb22f639d447c07bf8a49043f05fdabd0b8",
       "headRepository": "sbingler/hsts-tracking-prevention-spec",
       "headRefName": "UseBlockQuotes",
       "headRefOid": "e6af993a0236a0a18196b689c30ade1b35ebe3c0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-06-18T20:21:26Z",
+      "mergedAt": "2025-06-18T20:21:26Z",
+      "mergedBy": "sbingler",
+      "mergeCommit": {
+        "oid": "ad784cffe59baa74b9fad8b8bba70fcd1905c71c"
+      },
       "comments": [
         {
           "author": "sbingler",
@@ -699,7 +701,21 @@
           "updatedAt": "2025-06-16T16:47:58Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOEayXc6vKRmR",
+          "commit": {
+            "abbreviatedOid": "e6af993"
+          },
+          "author": "Ladankhamnian",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-18T10:42:37Z",
+          "updatedAt": "2025-06-18T10:42:37Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
